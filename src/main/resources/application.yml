@@ -10,5 +10,8 @@ netty:
 hello:
   world:
     message: "Hello from application.yaml"
+    translation:
+      sq: "Pershendetje"
+      de: "Hello Welt"
 
 
