@@ -30,6 +30,12 @@ class HelloWorldControllerTest {
         var response = client.toBlocking().exchange("/hello", String.class);
         assertEquals(HttpStatus.OK, response.getStatus());
         assertEquals("Hello from Service",response.getBody().get());
+    }
 
+    @Test
+    void helloFromConfigEndpointReturnsMessageFromConfigFile() {
+        var response = client.toBlocking().exchange("/hello/config", String.class);
+        assertEquals(HttpStatus.OK, response.getStatus());
+        assertEquals("Hello from application.yaml", response.getBody().get());
     }
 }
